@@ -9,6 +9,16 @@ fn panic(_panic: &PanicInfo<'_>) -> ! {
 }
 
 #[no_mangle]
+pub extern "C" fn DefaultExceptionHandler() {
+    loop {}
+}
+
+#[no_mangle]
+pub extern "C" fn HardFault() {
+    loop {}
+}
+
+#[no_mangle]
 extern "C" fn main() -> ! {
     let x = RODATA;
     let y = unsafe { &mut BSS };

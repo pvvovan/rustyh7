@@ -10,12 +10,6 @@ stop_here:
     b stop_here
 
 
-.section .vector_table, "ax"
-.align 2
-.global __VECTOR_TABLE
-__VECTOR_TABLE:
-.word _reset_handler
-
 sysinit:
     // Zero out the BSS
     ldr r1, =__SYM_bssbegin__
@@ -41,3 +35,25 @@ data_copy_test:
     bne data_copy_loop
 
     bx lr
+
+
+.section .vector_table, "ax"
+.align 2
+.global VECTOR_TABLE
+VECTOR_TABLE:
+.word _reset_handler
+.word NMI
+.word HardFault
+.word MemManage
+.word BusFault
+.word UsageFault
+.word 0
+.word 0
+.word 0
+.word 0
+.word SVCall
+.word DebugMonitor
+.word 0
+.word PendSV
+.word SysTick
+.word DefaultExceptionHandler

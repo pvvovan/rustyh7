@@ -7,6 +7,18 @@ MEMORY
 /* The entry point is the reset handler */
 ENTRY(_reset_handler);
 
+EXTERN(VECTOR_TABLE);
+
+PROVIDE(NMI             = DefaultExceptionHandler);
+PROVIDE(HardFault       = DefaultExceptionHandler);
+PROVIDE(MemManage       = DefaultExceptionHandler);
+PROVIDE(BusFault        = DefaultExceptionHandler);
+PROVIDE(UsageFault      = DefaultExceptionHandler);
+PROVIDE(SVCall          = DefaultExceptionHandler);
+PROVIDE(DebugMonitor    = DefaultExceptionHandler);
+PROVIDE(PendSV          = DefaultExceptionHandler);
+PROVIDE(SysTick         = DefaultExceptionHandler);
+
 SECTIONS
 {
     .vector_table ORIGIN(FLASH) :
@@ -14,7 +26,6 @@ SECTIONS
         /* First entry: initial Stack Pointer value */
         LONG(ORIGIN(AXI_SRAM) + LENGTH(AXI_SRAM))
 
-        /* Second entry: reset vector */
         KEEP(*(.vector_table))
     } > FLASH
 

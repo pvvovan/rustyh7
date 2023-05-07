@@ -1,3 +1,5 @@
+.syntax unified
+.cpu cortex-m7
 .type _reset_handler,%function
 .thumb_func
 .global _reset_handler
@@ -11,6 +13,14 @@ stop_here:
 
 
 sysinit:
+    // Enabling the FPU
+    ldr r0, =0xE000ED88;        // CPACR is located at address 0xE000ED88
+    ldr r1, [r0];               // Read CPACR
+    orr r1, r1, #(0xF << 20);   // Set bits 20-23 to enable CP10 and CP11 coprocessors
+    str r1, [r0];               // wait for store to complete
+    dsb;                        // reset pipeline now, the FPU is enabled
+    isb
+
     // Zero out the BSS
     ldr r1, =__SYM_bssbegin__
     ldr r2, =__SYM_bssend__

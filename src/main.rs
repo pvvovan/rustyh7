@@ -23,10 +23,12 @@ extern "C" fn main() -> ! {
     let x = RODATA;
     let y = unsafe { &mut BSS };
     let z = unsafe { &mut DATA };
+    let mut _fl: f32 = 0.0;
 
     loop {
         *z += x[0] as u16;
         *y += 2;
+        _fl += 1.1;
     }
 }
 

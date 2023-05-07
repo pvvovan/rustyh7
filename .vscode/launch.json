@@ -10,7 +10,7 @@
 			"name": "Debug with ST-Link",
 			"request": "launch",
 			"type": "cortex-debug",
-			"runToEntryPoint": "main",
+			"runToEntryPoint": "sysinit",
 			"showDevDebugOutput": "none",
 			"servertype": "stlink",
 			"svdFile": "./STM32H723.svd"

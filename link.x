@@ -22,7 +22,31 @@ SECTIONS
     {
         . = ALIGN(4);
         *(.text .text.*);
+        . = ALIGN(4);
     } > FLASH
+
+    .rodata : {
+        . = ALIGN(4);
+        *(.rodata .rodata*)
+        . = ALIGN(4);
+    } > FLASH
+
+    .data : {
+        . = ALIGN(4);
+        __SYM_databegin__ = .;
+        *(.data .data*)
+        . = ALIGN(4);
+        __SYM_dataend__ = .;
+    } > AXI_SRAM AT > FLASH
+    __SYM_loaddatabegin__ = LOADADDR(.data);
+
+    .bss : {
+        . = ALIGN(4);
+        __SYM_bssbegin__ = .;
+        *(.bss .bss*)
+        . = ALIGN(4);
+        __SYM_bssend__ = .;
+    } > AXI_SRAM
 
     /DISCARD/ :
     {

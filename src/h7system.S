@@ -11,7 +11,6 @@ stop_here:
 
 .section .vector_table, "ax"
 .align 2
-
 .global __VECTOR_TABLE
 __VECTOR_TABLE:
 .word _reset_handler

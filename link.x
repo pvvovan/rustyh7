@@ -19,12 +19,14 @@ PROVIDE(DebugMonitor    = DefaultExceptionHandler);
 PROVIDE(PendSV          = DefaultExceptionHandler);
 PROVIDE(SysTick         = DefaultExceptionHandler);
 
+__SYM_StackTop__ = ORIGIN(AXI_SRAM) + LENGTH(AXI_SRAM);
+
 SECTIONS
 {
     .vector_table ORIGIN(FLASH) :
     {
         /* First entry: initial Stack Pointer value */
-        LONG(ORIGIN(AXI_SRAM) + LENGTH(AXI_SRAM))
+        LONG(__SYM_StackTop__)
 
         KEEP(*(.vector_table))
     } > FLASH

@@ -4,6 +4,7 @@
 .thumb_func
 .global _reset_handler
 _reset_handler:
+    ldr sp, =__SYM_StackTop__
     bl sysinit
     ldr r1, =main
     blx r1
@@ -12,14 +13,18 @@ stop_here:
     b stop_here
 
 
+.thumb_func
+.type sysinit,%function
 sysinit:
+    push {r0-r3}
+
     // Enabling the FPU
-    ldr r0, =0xE000ED88;        // CPACR is located at address 0xE000ED88
+    ldr.w r0, =0xE000ED88;      // CPACR is located at address 0xE000ED88
     ldr r1, [r0];               // Read CPACR
     orr r1, r1, #(0xF << 20);   // Set bits 20-23 to enable CP10 and CP11 coprocessors
     str r1, [r0];               // wait for store to complete
-    dsb;                        // reset pipeline now, the FPU is enabled
-    isb
+    dsb
+    isb;                        // reset pipeline now, the FPU is enabled
 
     // Zero out the BSS
     ldr r1, =__SYM_bssbegin__
@@ -44,13 +49,14 @@ data_copy_test:
     cmp r1, r2
     bne data_copy_loop
 
+    pop {r0-r3}
     bx lr
 
 
 .section .vector_table, "ax"
 .align 2
-.global VECTOR_TABLE
-VECTOR_TABLE:
+.global _vector_table
+_vector_table:
 .word _reset_handler
 .word NMI
 .word HardFault

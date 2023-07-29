@@ -2,7 +2,7 @@
 pub extern "C" fn SysTick() {
     unsafe {
         CNT += 1;
-        if CNT >= 100 {
+        if CNT >= 10 {
             CNT = 0;
             SECONDS += 1;
         }

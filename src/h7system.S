@@ -4,13 +4,31 @@
 .thumb_func
 .global _reset_handler
 _reset_handler:
+    mov r1, 1
+    cmp r1, 1
+    beq _reset_handler
     ldr sp, =__SYM_StackTop__
     bl sysinit
+    bl mybreakpoint
     ldr r1, =main
     blx r1
 stop_here:
     bkpt #0
     b stop_here
+
+
+.thumb_func
+.type mybreakpoint,%function
+mybreakpoint:
+    push {r0, r1}
+mystop:
+    ldr.w r0, =stop_required
+    ldr.w r1, [r0]
+    mov r0, 1
+    cmp r0, r1
+    beq mystop
+    pop {r0, r1}
+    bx lr
 
 
 .thumb_func
@@ -73,3 +91,9 @@ _vector_table:
 .word PendSV
 .word SysTick
 .word DefaultExceptionHandler
+
+
+.section .data, "aw"
+.align 2
+stop_required:
+    .word 1

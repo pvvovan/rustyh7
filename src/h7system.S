@@ -9,7 +9,7 @@ _reset_handler:
     beq _reset_handler
     ldr sp, =__SYM_StackTop__
     bl sysinit
-    bl mybreakpoint
+    //bl mybreakpoint
     ldr r1, =main
     blx r1
 stop_here:

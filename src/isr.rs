@@ -1,5 +1,5 @@
 #[no_mangle]
-pub extern "C" fn SysTick() {
+extern "C" fn SysTick() {
     unsafe {
         CNT += 1;
         if CNT >= 10 {

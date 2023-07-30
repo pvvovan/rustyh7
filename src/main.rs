@@ -11,12 +11,12 @@ fn panic(_panic: &PanicInfo<'_>) -> ! {
 }
 
 #[no_mangle]
-pub extern "C" fn DefaultExceptionHandler() {
+extern "C" fn DefaultExceptionHandler() {
     loop {}
 }
 
 #[no_mangle]
-pub extern "C" fn HardFault() {
+extern "C" fn HardFault() {
     loop {}
 }
 

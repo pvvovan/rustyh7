@@ -35,8 +35,11 @@ extern "C" fn main() -> ! {
         _fl += 1.1;
 
         if *y > 253 {
+            let mut lock = isr::lock();
+            let _lock2 = isr::lock();
             *y = 0;
             *z = 1;
+            lock.unlock();
         }
     }
 }

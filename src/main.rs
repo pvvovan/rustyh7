@@ -25,6 +25,7 @@ extern "C" fn HardFault() {
 extern "C" fn main() -> ! {
     tim_start();
     flash_setlatency();
+    powercontrol_init();
 
     let x = RODATA;
     let y = unsafe { &mut BSS };
@@ -142,6 +143,35 @@ fn flash_setlatency() {
     core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
     loop {
         if unsafe { core::ptr::read(FLASH_ACR) } & FLASH_ACR_LATENCY_3WS != 0 {
+            break;
+        }
+    }
+}
+
+fn powercontrol_init() {
+    const PWR_BASE: u32 = 0x5802_4800;
+    const PWR_CR3: *mut u32 = (PWR_BASE + 0x00C) as *mut u32;
+
+    const PWR_CR3_BYPASS: u32 = 1 << 0;
+    const PWR_CR3_LDOEN: u32 = 1 << 1;
+    const PWR_CR3_SCEN: u32 = 1 << 2;
+
+    let mut cr3 = unsafe { core::ptr::read(PWR_CR3) };
+    cr3 = cr3 & (!PWR_CR3_BYPASS) & (!PWR_CR3_SCEN);
+    cr3 = cr3 | PWR_CR3_LDOEN;
+    unsafe { core::ptr::write(PWR_CR3, cr3) }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* When increasing the performance, the voltage scaling must be changed before
+    increasing the system frequency. */
+    const PWR_D3CR: *mut u32 = (PWR_BASE + 0x018) as *mut u32;
+    const PWR_D3CR_VOS: u32 = 0b11 << 14;
+    unsafe { core::ptr::write(PWR_D3CR, !PWR_D3CR_VOS) }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    const PWR_D3CR_VOSRDY: u32 = 1 << 13;
+    loop {
+        if unsafe { core::ptr::read(PWR_D3CR) & PWR_D3CR_VOSRDY } != 0 {
             break;
         }
     }

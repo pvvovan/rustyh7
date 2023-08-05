@@ -14,6 +14,11 @@ extern "C" fn SysTick() {
 static mut CNT: u32 = 0;
 static mut SECONDS: u32 = 0;
 
+pub fn sys_seconds() -> u32 {
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+    unsafe { SECONDS }
+}
+
 pub struct Atom {
     locked_owned: bool,
 }

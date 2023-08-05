@@ -72,6 +72,23 @@ extern "C" fn main() -> ! {
             *z = 1;
             lock.unlock();
         }
+
+        delay(1);
+        gpio_b.set(&[gpio::Pin::Pin0]);
+        gpio_b.reset(&[gpio::Pin::Pin14]);
+
+        delay(1);
+        gpio_b.reset(&[gpio::Pin::Pin0]);
+        gpio_b.set(&[gpio::Pin::Pin14]);
+    }
+}
+
+fn delay(seconds: u32) {
+    let ori_sec = isr::sys_seconds();
+    loop {
+        if isr::sys_seconds() - ori_sec >= seconds {
+            break;
+        }
     }
 }
 

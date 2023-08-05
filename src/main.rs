@@ -1,6 +1,7 @@
 #![no_main]
 #![no_std]
 
+mod gpio;
 mod isr;
 
 use core::panic::PanicInfo;
@@ -28,6 +29,36 @@ extern "C" fn main() -> ! {
     let y = unsafe { &mut BSS };
     let z = unsafe { &mut DATA };
     let mut _fl: f32 = 0.0;
+
+    // let _gpio_a = gpio::Gpio::take(
+    //     gpio::Port::GpioA,
+    //     &[
+    //         gpio::Pin::Pin0,
+    //         gpio::Pin::Pin1,
+    //         gpio::Pin::Pin2,
+    //         gpio::Pin::Pin3,
+    //         gpio::Pin::Pin4,
+    //         gpio::Pin::Pin5,
+    //         gpio::Pin::Pin6,
+    //         gpio::Pin::Pin7,
+    //         gpio::Pin::Pin8,
+    //         gpio::Pin::Pin9,
+    //         gpio::Pin::Pin10,
+    //         gpio::Pin::Pin11,
+    //         gpio::Pin::Pin12,
+    //         gpio::Pin::Pin13,
+    //         gpio::Pin::Pin14,
+    //         gpio::Pin::Pin15,
+    //     ],
+    // );
+    let gpio_b = gpio::Gpio::take(gpio::Port::GpioB, &[gpio::Pin::Pin0, gpio::Pin::Pin14]);
+    // let _gpio_c = gpio::Gpio::take(gpio::Port::GpioC, &[gpio::Pin::Pin0]);
+
+    gpio_b.set(&[gpio::Pin::Pin0]);
+    gpio_b.reset(&[gpio::Pin::Pin14]);
+
+    gpio_b.reset(&[gpio::Pin::Pin0]);
+    gpio_b.set(&[gpio::Pin::Pin14]);
 
     loop {
         *z += x[0] as u16;

@@ -24,6 +24,7 @@ extern "C" fn HardFault() {
 #[no_mangle]
 extern "C" fn main() -> ! {
     tim_start();
+    flash_setlatency();
 
     let x = RODATA;
     let y = unsafe { &mut BSS };
@@ -124,4 +125,24 @@ fn tim_start() {
         );
     }
     core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+}
+
+fn flash_setlatency() {
+    const FLASH_BASE: u32 = 0x5200_2000;
+    const FLASH_ACR: *mut u32 = FLASH_BASE as *mut u32;
+    const FLASH_ACR_LATENCY_3WS: u32 = 0x0000_0003;
+    const FLASH_ACR_LATENCY_MSK: u32 = 0xFFFF_FFF0;
+
+    let mut latency = unsafe { core::ptr::read(FLASH_ACR) };
+    latency = latency & FLASH_ACR_LATENCY_MSK;
+    latency = latency | FLASH_ACR_LATENCY_3WS;
+    unsafe {
+        core::ptr::write(FLASH_ACR, latency);
+    }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+    loop {
+        if unsafe { core::ptr::read(FLASH_ACR) } & FLASH_ACR_LATENCY_3WS != 0 {
+            break;
+        }
+    }
 }

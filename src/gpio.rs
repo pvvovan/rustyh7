@@ -47,7 +47,7 @@ fn mark_taken(gpio_taken: &mut bool) {
     }
 }
 
-const RCC_AHB4ENR: *mut u32 = (0x58024400 + 0x0E0) as *mut u32;
+const RCC_AHB4ENR: *mut u32 = (0x5802_4400 + 0x00E0) as *mut u32;
 const RCC_AHB4ENR_GPIOAEN: u32 = 1 << 0;
 const RCC_AHB4ENR_GPIOBEN: u32 = 1 << 1;
 const RCC_AHB4ENR_GPIOCEN: u32 = 1 << 2;

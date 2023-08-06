@@ -27,6 +27,7 @@ extern "C" fn main() -> ! {
     enable_cache();
     flash_setlatency();
     powercontrol_init();
+    clock_config();
     tim_start();
 
     let x = RODATA;
@@ -221,5 +222,33 @@ fn enable_cache() {
         core::ptr::write_volatile(SBC_CCR, ccr);
         asm!("dsb 0xF");
         asm!("isb 0xF");
+    }
+}
+
+fn clock_config() {
+    const RCC_BASE: u32 = 0x5802_4400;
+    const RCC_CR: *mut u32 = RCC_BASE as *mut u32;
+
+    /* Enable HSE external oscillator (HSE Bypass) */
+    const RCC_CR_HSEBYP: u32 = 1 << 18;
+    let mut cr = unsafe { core::ptr::read_volatile(RCC_CR) };
+    cr |= RCC_CR_HSEBYP;
+    unsafe { core::ptr::write_volatile(RCC_CR, cr) }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Enable HSE crystal oscillator (HSE ON) */
+    const RCC_CR_HSEON: u32 = 1 << 16;
+    cr = unsafe { core::ptr::read_volatile(RCC_CR) };
+    cr |= RCC_CR_HSEON;
+    unsafe { core::ptr::write_volatile(RCC_CR, cr) }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Wait till HSE is ready */
+    loop {
+        const RCC_CR_HSERDY: u32 = 1 << 17;
+        cr = unsafe { core::ptr::read_volatile(RCC_CR) };
+        if cr & RCC_CR_HSERDY != 0 {
+            break;
+        }
     }
 }

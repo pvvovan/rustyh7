@@ -55,7 +55,7 @@ const RCC_AHB4ENR_GPIOCEN: u32 = 1 << 2;
 unsafe fn set_bits(addr: *mut u32, bits: u32) {
     let mut val = core::ptr::read_volatile(addr);
     val = val | bits;
-    core::ptr::write(addr, val);
+    core::ptr::write_volatile(addr, val);
 }
 
 const GPIO_BSRR: u32 = 0x18;

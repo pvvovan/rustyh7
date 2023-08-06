@@ -111,15 +111,15 @@ fn flash_setlatency() {
     const FLASH_ACR_LATENCY_3WS: u32 = 0x0000_0003;
     const FLASH_ACR_LATENCY_MSK: u32 = 0xFFFF_FFF0;
 
-    let mut latency = unsafe { core::ptr::read(FLASH_ACR) };
+    let mut latency = unsafe { core::ptr::read_volatile(FLASH_ACR) };
     latency = latency & FLASH_ACR_LATENCY_MSK;
     latency = latency | FLASH_ACR_LATENCY_3WS;
     unsafe {
-        core::ptr::write(FLASH_ACR, latency);
+        core::ptr::write_volatile(FLASH_ACR, latency);
     }
 
     loop {
-        if unsafe { core::ptr::read(FLASH_ACR) } & FLASH_ACR_LATENCY_3WS != 0 {
+        if unsafe { core::ptr::read_volatile(FLASH_ACR) } & FLASH_ACR_LATENCY_3WS != 0 {
             break;
         }
     }
@@ -133,20 +133,20 @@ fn powercontrol_init() {
     const PWR_CR3_LDOEN: u32 = 1 << 1;
     const PWR_CR3_SCEN: u32 = 1 << 2;
 
-    let mut cr3 = unsafe { core::ptr::read(PWR_CR3) };
+    let mut cr3 = unsafe { core::ptr::read_volatile(PWR_CR3) };
     cr3 = cr3 & (!PWR_CR3_BYPASS) & (!PWR_CR3_SCEN);
     cr3 = cr3 | PWR_CR3_LDOEN;
-    unsafe { core::ptr::write(PWR_CR3, cr3) }
+    unsafe { core::ptr::write_volatile(PWR_CR3, cr3) }
 
     /* When increasing the performance, the voltage scaling must be changed before
     increasing the system frequency. */
     const PWR_D3CR: *mut u32 = (PWR_BASE + 0x018) as *mut u32;
     const PWR_D3CR_VOS: u32 = 0b11 << 14;
-    unsafe { core::ptr::write(PWR_D3CR, !PWR_D3CR_VOS) }
+    unsafe { core::ptr::write_volatile(PWR_D3CR, !PWR_D3CR_VOS) }
 
     const PWR_D3CR_VOSRDY: u32 = 1 << 13;
     loop {
-        if unsafe { core::ptr::read(PWR_D3CR) & PWR_D3CR_VOSRDY } != 0 {
+        if unsafe { core::ptr::read_volatile(PWR_D3CR) & PWR_D3CR_VOSRDY } != 0 {
             break;
         }
     }

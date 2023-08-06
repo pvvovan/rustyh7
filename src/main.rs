@@ -260,7 +260,41 @@ fn clock_config() {
     let mut pllckselr = unsafe { core::ptr::read_volatile(RCC_PLLCKSELR) };
     pllckselr &= !RCC_PLLCKSELR_PLLSRC;
     pllckselr |= RCC_PLLSOURCE_HSE;
+
+    /* Set PLL1 M Coefficient */
+    const RCC_PLLCKSELR_DIVM1_POS: u8 = 4;
+    const RCC_PLLCKSELR_DIVM1: u32 = 0x3F << RCC_PLLCKSELR_DIVM1_POS;
+    pllckselr &= !RCC_PLLCKSELR_DIVM1;
+    pllckselr |= 4 << RCC_PLLCKSELR_DIVM1_POS; // Divide by 4
     unsafe { core::ptr::write_volatile(RCC_PLLCKSELR, pllckselr) };
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Set PLL1 N Coefficient */
+    const RCC_PLL1DIVR: *mut u32 = (RCC_BASE + 0x030) as *mut u32;
+    const RCC_PLL1DIVR_N1_POS: u8 = 0;
+    const RCC_PLL1DIVR_N1: u32 = 0x1FF << RCC_PLL1DIVR_N1_POS;
+    let mut pll1divr = unsafe { core::ptr::read_volatile(RCC_PLL1DIVR) };
+    pll1divr &= !RCC_PLL1DIVR_N1;
+    pll1divr |= (275 - 1) << RCC_PLL1DIVR_N1_POS; // Multiply by 275
+
+    /* Set PLL1 Q Coefficient */
+    const RCC_PLL1DIVR_Q1_POS: u8 = 16;
+    const RCC_PLL1DIVR_Q1: u32 = 0x7F << RCC_PLL1DIVR_Q1_POS;
+    pll1divr &= !RCC_PLL1DIVR_Q1;
+    pll1divr |= (4 - 1) << RCC_PLL1DIVR_Q1_POS; // Divide by 4
+
+    /* Set PLL1 R Coefficient */
+    const RCC_PLL1DIVR_R1_POS: u8 = 24;
+    const RCC_PLL1DIVR_R1: u32 = 0x7F << RCC_PLL1DIVR_R1_POS;
+    pll1divr &= !RCC_PLL1DIVR_R1;
+    pll1divr |= (2 - 1) << RCC_PLL1DIVR_R1_POS; // Divide by 2
+
+    /* Set PLL1 P Coefficient */
+    const RCC_PLL1DIVR_P1_POS: u8 = 9;
+    const RCC_PLL1DIVR_P1: u32 = 0x7F << RCC_PLL1DIVR_P1_POS;
+    pll1divr &= !RCC_PLL1DIVR_P1;
+    pll1divr |= (1 - 1) << RCC_PLL1DIVR_P1_POS; // 0000000: pll1_p_ck = vco1_ck
+    unsafe { core::ptr::write_volatile(RCC_PLL1DIVR, pll1divr) };
     core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
 
     /* Enable PLL1P and PLL1R */
@@ -279,7 +313,54 @@ fn clock_config() {
     /* Set PLL1 VCO OutputRange: Wide VCO range: 192 to 836 MHz (default after reset) */
     const RCC_PLLCFGR_PLL1VCOSEL: u32 = 0x1 << 1;
     pllcfgr &= !RCC_PLLCFGR_PLL1VCOSEL;
-
     unsafe { core::ptr::write_volatile(RCC_PLLCFGR, pllcfgr) };
     core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Enable PLL1 */
+    const RCC_CR_PLL1ON: u32 = 1 << 24;
+    cr = unsafe { core::ptr::read_volatile(RCC_CR) };
+    cr |= RCC_CR_PLL1ON;
+    unsafe { core::ptr::write_volatile(RCC_CR, cr) }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Wait till PLL is ready */
+    const RCC_CR_PLL1RDY: u32 = 1 << 25;
+    loop {
+        cr = unsafe { core::ptr::read_volatile(RCC_CR) };
+        if cr & RCC_CR_PLL1RDY != 0 {
+            break;
+        }
+    }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Intermediate AHB prescaler 2 when target frequency clock is higher than 80 MHz */
+    const RCC_D1CFGR: *mut u32 = (RCC_BASE + 0x018) as *mut u32;
+    const RCC_D1CFGR_HPRE_POS: u8 = 0;
+    const RCC_D1CFGR_HPRE: u32 = 0xF << RCC_D1CFGR_HPRE_POS;
+    const RCC_D1CFGR_HPRE_DIV2: u32 = 0x1 << 3;
+    let mut d1cfgr = unsafe { core::ptr::read_volatile(RCC_D1CFGR) };
+    d1cfgr &= !RCC_D1CFGR_HPRE;
+    d1cfgr |= RCC_D1CFGR_HPRE_DIV2;
+    unsafe { core::ptr::write_volatile(RCC_D1CFGR, d1cfgr) };
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Configure PLL1 as the system clock source */
+    const RCC_CFGR: *mut u32 = (RCC_BASE + 0x010) as *mut u32;
+    const RCC_CFGR_SW: u32 = 0x7 << 0;
+    const RCC_CFGR_SW_PLL1: u32 = 3;
+    let mut cfgr = unsafe { core::ptr::read_volatile(RCC_CFGR) };
+    cfgr &= !RCC_CFGR_SW;
+    cfgr |= RCC_CFGR_SW_PLL1;
+    unsafe { core::ptr::write_volatile(RCC_CFGR, cfgr) };
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Wait till System clock is ready */
+    const RCC_CFGR_SWS: u32 = 0x7 << 3;
+    const RCC_CFGR_SWS_PLL1: u32 = 0x00000018;
+    loop {
+        cfgr = unsafe { core::ptr::read_volatile(RCC_CFGR) };
+        if cfgr & RCC_CFGR_SWS == RCC_CFGR_SWS_PLL1 {
+            break;
+        }
+    }
 }

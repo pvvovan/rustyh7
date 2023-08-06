@@ -251,4 +251,13 @@ fn clock_config() {
             break;
         }
     }
+
+    /* Set HSE as PLL source */
+    const RCC_PLLCKSELR: *mut u32 = (RCC_BASE + 0x028) as *mut u32;
+    const RCC_PLLCKSELR_PLLSRC: u32 = 0x3 << 0;
+    const RCC_PLLSOURCE_HSE: u32 = 1 << 1;
+    let mut pllckselr = unsafe { core::ptr::read_volatile(RCC_PLLCKSELR) };
+    pllckselr &= !RCC_PLLCKSELR_PLLSRC;
+    pllckselr |= RCC_PLLSOURCE_HSE;
+    unsafe { core::ptr::write_volatile(RCC_PLLCKSELR, pllckselr) };
 }

@@ -28,6 +28,7 @@ extern "C" fn main() -> ! {
     enable_cache();
     powercontrol_init();
     unsafe {
+        /* Enable interrupts */
         asm!("CPSIE i");
     }
     tim_start();
@@ -201,61 +202,62 @@ fn enable_cache() {
     }
 
     /* Enable D-Cache */
-    // unsafe {
-    //     /* return if DCache is already enabled */
-    //     const SCB_CCR_DC: u32 = 1 << 16;
-    //     if core::ptr::read_volatile(SBC_CCR) & SCB_CCR_DC != 0 {
-    //         return;
-    //     }
+    unsafe {
+        /* return if DCache is already enabled */
+        const SCB_CCR_DC: u32 = 1 << 16;
+        if core::ptr::read_volatile(SBC_CCR) & SCB_CCR_DC != 0 {
+            return;
+        }
 
-    //     /* select Level 1 data cache */
-    //     const SCB_CSSELR: *mut u32 = 0xE000_ED84 as *mut u32;
-    //     core::ptr::write_volatile(SCB_CSSELR, 0);
-    //     asm!("dsb 0xF");
+        /* select Level 1 data cache */
+        const SCB_CSSELR: *mut u32 = 0xE000_ED84 as *mut u32;
+        core::ptr::write_volatile(SCB_CSSELR, 0);
+        asm!("dsb 0xF");
 
-    //     /* invalidate D-Cache */
-    //     const SCB_CCSIDR: *mut u32 = 0xE000_ED80 as *mut u32;
-    //     let ccsidr = core::ptr::read_volatile(SCB_CCSIDR);
-    //     const SCB_CCSIDR_NUMSETS_POS: u8 = 13;
-    //     const SCB_CCSIDR_NUMSETS_MSK: u32 = 0x7FFF << SCB_CCSIDR_NUMSETS_POS;
-    //     let mut num_sets = ((ccsidr) & SCB_CCSIDR_NUMSETS_MSK) >> SCB_CCSIDR_NUMSETS_POS;
-    //     loop {
-    //         const SCB_CCSIDR_ASSOCIATIVITY_POS: u8 = 3;
-    //         const SCB_CCSIDR_ASSOCIATIVITY_MSK: u32 = 0x3FF << SCB_CCSIDR_ASSOCIATIVITY_POS;
-    //         let mut num_ways =
-    //             ((ccsidr) & SCB_CCSIDR_ASSOCIATIVITY_MSK) >> SCB_CCSIDR_ASSOCIATIVITY_POS;
-    //         loop {
-    //             const SCB_DCISW: *mut u32 = 0xE000_EF60 as *mut u32;
-    //             const SCB_DCISW_SET_POS: u8 = 5;
-    //             const SCB_DCISW_SET_MSK: u32 = 0x1FF << SCB_DCISW_SET_POS;
-    //             const SCB_DCISW_WAY_POS: u8 = 30;
-    //             const SCB_DCISW_WAY_MSK: u32 = 0x3 << SCB_DCISW_WAY_POS;
-    //             core::ptr::write_volatile(
-    //                 SCB_DCISW,
-    //                 ((num_sets << SCB_DCISW_SET_POS) & SCB_DCISW_SET_MSK)
-    //                     | ((num_ways << SCB_DCISW_WAY_POS) & SCB_DCISW_WAY_MSK),
-    //             );
-    //             asm!("nop");
+        /* invalidate D-Cache */
+        const SCB_CCSIDR: *mut u32 = 0xE000_ED80 as *mut u32;
+        let ccsidr = core::ptr::read_volatile(SCB_CCSIDR);
+        const SCB_CCSIDR_NUMSETS_POS: u8 = 13;
+        const SCB_CCSIDR_NUMSETS_MSK: u32 = 0x7FFF << SCB_CCSIDR_NUMSETS_POS;
+        let mut num_sets = ((ccsidr) & SCB_CCSIDR_NUMSETS_MSK) >> SCB_CCSIDR_NUMSETS_POS;
+        loop {
+            const SCB_CCSIDR_ASSOCIATIVITY_POS: u8 = 3;
+            const SCB_CCSIDR_ASSOCIATIVITY_MSK: u32 = 0x3FF << SCB_CCSIDR_ASSOCIATIVITY_POS;
+            let mut num_ways =
+                ((ccsidr) & SCB_CCSIDR_ASSOCIATIVITY_MSK) >> SCB_CCSIDR_ASSOCIATIVITY_POS;
+            loop {
+                const SCB_DCISW: *mut u32 = 0xE000_EF60 as *mut u32;
+                const SCB_DCISW_SET_POS: u8 = 5;
+                const SCB_DCISW_SET_MSK: u32 = 0x1FF << SCB_DCISW_SET_POS;
+                const SCB_DCISW_WAY_POS: u8 = 30;
+                const SCB_DCISW_WAY_MSK: u32 = 0x3 << SCB_DCISW_WAY_POS;
+                core::ptr::write_volatile(
+                    SCB_DCISW,
+                    ((num_sets << SCB_DCISW_SET_POS) & SCB_DCISW_SET_MSK)
+                        | ((num_ways << SCB_DCISW_WAY_POS) & SCB_DCISW_WAY_MSK),
+                );
+                asm!("nop");
 
-    //             num_ways -= 1;
-    //             if num_ways == 0 {
-    //                 break;
-    //             }
-    //         }
-    //         num_sets -= 1;
-    //         if num_sets == 0 {
-    //             break;
-    //         }
-    //     }
-    //     asm!("dsb 0xF");
+                if num_ways == 0 {
+                    break;
+                }
+                num_ways -= 1;
+            }
 
-    //     /* enable D-Cache */
-    //     let mut ccr = core::ptr::read_volatile(SBC_CCR);
-    //     ccr = ccr | SCB_CCR_DC;
-    //     core::ptr::write_volatile(SBC_CCR, ccr);
-    //     asm!("dsb 0xF");
-    //     asm!("isb 0xF");
-    // }
+            if num_sets == 0 {
+                break;
+            }
+            num_sets -= 1;
+        }
+        asm!("dsb 0xF");
+
+        /* enable D-Cache */
+        let mut ccr = core::ptr::read_volatile(SBC_CCR);
+        ccr = ccr | SCB_CCR_DC;
+        core::ptr::write_volatile(SBC_CCR, ccr);
+        asm!("dsb 0xF");
+        asm!("isb 0xF");
+    }
 }
 
 fn system_init() {

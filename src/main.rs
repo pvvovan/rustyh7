@@ -251,6 +251,7 @@ fn clock_config() {
             break;
         }
     }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
 
     /* Set HSE as PLL source */
     const RCC_PLLCKSELR: *mut u32 = (RCC_BASE + 0x028) as *mut u32;
@@ -260,4 +261,25 @@ fn clock_config() {
     pllckselr &= !RCC_PLLCKSELR_PLLSRC;
     pllckselr |= RCC_PLLSOURCE_HSE;
     unsafe { core::ptr::write_volatile(RCC_PLLCKSELR, pllckselr) };
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+    /* Enable PLL1P and PLL1R */
+    const RCC_PLLCFGR: *mut u32 = (RCC_BASE + 0x02C) as *mut u32;
+    const RCC_PLLCFGR_DIVP1EN: u32 = 1 << 16;
+    const RCC_PLLCFGR_DIVR1EN: u32 = 1 << 18;
+    let mut pllcfgr = unsafe { core::ptr::read_volatile(RCC_PLLCFGR) };
+    pllcfgr |= RCC_PLLCFGR_DIVP1EN | RCC_PLLCFGR_DIVR1EN;
+
+    /* Set PLL1 VCO Input Range */
+    const RCC_PLLCFGR_PLL1RGE: u32 = 0x3 << 2;
+    const RCC_PLLINPUTRANGE_2_4: u32 = 0x1 << 2;
+    pllcfgr &= !RCC_PLLCFGR_PLL1RGE;
+    pllcfgr |= RCC_PLLINPUTRANGE_2_4;
+
+    /* Set PLL1 VCO OutputRange: Wide VCO range: 192 to 836 MHz (default after reset) */
+    const RCC_PLLCFGR_PLL1VCOSEL: u32 = 0x1 << 1;
+    pllcfgr &= !RCC_PLLCFGR_PLL1VCOSEL;
+
+    unsafe { core::ptr::write_volatile(RCC_PLLCFGR, pllcfgr) };
+    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
 }

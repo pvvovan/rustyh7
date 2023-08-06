@@ -24,14 +24,9 @@ extern "C" fn HardFault() {
 
 #[no_mangle]
 extern "C" fn main() -> ! {
-    // system_init();
     enable_cache();
     flash_setlatency();
     powercontrol_init();
-    unsafe {
-        /* Enable interrupts */
-        asm!("CPSIE i");
-    }
     tim_start();
 
     let x = RODATA;
@@ -39,29 +34,7 @@ extern "C" fn main() -> ! {
     let z = unsafe { &mut DATA };
     let mut _fl: f32 = 0.0;
 
-    // let _gpio_a = gpio::Gpio::take(
-    //     gpio::Port::GpioA,
-    //     &[
-    //         gpio::Pin::Pin0,
-    //         gpio::Pin::Pin1,
-    //         gpio::Pin::Pin2,
-    //         gpio::Pin::Pin3,
-    //         gpio::Pin::Pin4,
-    //         gpio::Pin::Pin5,
-    //         gpio::Pin::Pin6,
-    //         gpio::Pin::Pin7,
-    //         gpio::Pin::Pin8,
-    //         gpio::Pin::Pin9,
-    //         gpio::Pin::Pin10,
-    //         gpio::Pin::Pin11,
-    //         gpio::Pin::Pin12,
-    //         gpio::Pin::Pin13,
-    //         gpio::Pin::Pin14,
-    //         gpio::Pin::Pin15,
-    //     ],
-    // );
     let gpio_b = gpio::Gpio::take(gpio::Port::GpioB, &[gpio::Pin::Pin0, gpio::Pin::Pin14]);
-    // let _gpio_c = gpio::Gpio::take(gpio::Port::GpioC, &[gpio::Pin::Pin0]);
 
     gpio_b.set(&[gpio::Pin::Pin0]);
     gpio_b.reset(&[gpio::Pin::Pin14]);
@@ -250,82 +223,3 @@ fn enable_cache() {
         asm!("isb 0xF");
     }
 }
-
-// fn system_init() {
-//     const RCC_BASE: u32 = 0x5802_4400;
-
-//     unsafe {
-//         /* Reset CFGR register */
-//         const RCC_CFGR: *mut u32 = (RCC_BASE + 0x010) as *mut u32;
-//         core::ptr::write_volatile(RCC_CFGR, 0);
-
-//         /* Reset HSEON, HSECSSON, CSION, HSI48ON, CSIKERON, PLL1ON, PLL2ON and PLL3ON bits */
-//         const RCC_CR: *mut u32 = RCC_BASE as *mut u32;
-//         let mut cr = core::ptr::read_volatile(RCC_CR);
-//         cr &= 0xEAF6_ED7F;
-//         core::ptr::write_volatile(RCC_CR, cr);
-//     }
-
-//     unsafe {
-//         /* Reset D1CFGR register */
-//         // RCC->D1CFGR = 0x00000000;
-//         core::ptr::write_volatile((RCC_BASE + 0x018) as *mut u32, 0);
-
-//         /* Reset D2CFGR register */
-//         // RCC->D2CFGR = 0x00000000;
-//         core::ptr::write_volatile((RCC_BASE + 0x01C) as *mut u32, 0);
-
-//         /* Reset D3CFGR register */
-//         // RCC->D3CFGR = 0x00000000;
-//         core::ptr::write_volatile((RCC_BASE + 0x020) as *mut u32, 0);
-
-//         /* Reset PLLCKSELR register */
-//         // RCC->PLLCKSELR = 0x02020200;
-//         core::ptr::write_volatile((RCC_BASE + 0x028) as *mut u32, 0x02020200);
-
-//         /* Reset PLLCFGR register */
-//         // RCC->PLLCFGR = 0x01FF0000;
-//         core::ptr::write_volatile((RCC_BASE + 0x02C) as *mut u32, 0x01FF0000);
-
-//         /* Reset PLL1DIVR register */
-//         // RCC->PLL1DIVR = 0x01010280;
-//         core::ptr::write_volatile((RCC_BASE + 0x030) as *mut u32, 0x01010280);
-
-//         /* Reset PLL1FRACR register */
-//         // RCC->PLL1FRACR = 0x00000000;
-//         core::ptr::write_volatile((RCC_BASE + 0x034) as *mut u32, 0x00000000);
-
-//         /* Reset PLL2DIVR register */
-//         // RCC->PLL2DIVR = 0x01010280;
-//         core::ptr::write_volatile((RCC_BASE + 0x038) as *mut u32, 0x01010280);
-
-//         /* Reset PLL2FRACR register */
-//         // RCC->PLL2FRACR = 0x00000000;
-//         core::ptr::write_volatile((RCC_BASE + 0x03C) as *mut u32, 0x00000000);
-
-//         /* Reset PLL3DIVR register */
-//         // RCC->PLL3DIVR = 0x01010280;
-//         core::ptr::write_volatile((RCC_BASE + 0x040) as *mut u32, 0x01010280);
-
-//         /* Reset PLL3FRACR register */
-//         // RCC->PLL3FRACR = 0x00000000;
-//         core::ptr::write_volatile((RCC_BASE + 0x044) as *mut u32, 0x00000000);
-
-//         /* Reset HSEBYP bit */
-//         // RCC->CR &= 0xFFFBFFFF;
-//         let mut cr = core::ptr::read_volatile(RCC_BASE as *mut u32);
-//         cr &= 0xFFFBFFFF;
-//         core::ptr::write_volatile(RCC_BASE as *mut u32, cr);
-
-//         /* Disable all interrupts */
-//         // RCC->CIER = 0x00000000;
-//         core::ptr::write_volatile((RCC_BASE + 0x060) as *mut u32, 0x00000000);
-
-//         /* Disable the FMC bank1 (enabled after reset).
-//         This, prevents CPU speculation access on this bank which blocks the use of FMC during
-//         24us. During this time the others FMC master (such as LTDC) cannot use it! */
-//         // FMC_Bank1_R->BTCR[0] = 0x000030D2;
-//         const FMC_BANK1_R_BTCR_0: *mut u32 = (0x4000_0000 + 0x1200_0000 + 0x4000) as *mut u32;
-//         core::ptr::write_volatile(FMC_BANK1_R_BTCR_0, 0x000030D2);
-//     }
-// }

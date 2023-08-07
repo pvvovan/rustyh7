@@ -9,12 +9,14 @@ extern "C" fn SysTick() {
             TOTALSEC += 1;
         }
     }
+    core::sync::atomic::fence(core::sync::atomic::Ordering::Release);
 }
 
 static mut CENTISEC: u32 = 0;
 static mut TOTALSEC: u32 = 0;
 
 pub fn sys_seconds() -> u32 {
+    core::sync::atomic::fence(core::sync::atomic::Ordering::Acquire);
     unsafe { TOTALSEC }
 }
 

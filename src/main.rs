@@ -82,7 +82,7 @@ static mut DATA: u16 = 1;
 fn tim_start() {
     /* Enable SysTick: 1. Program reload value */
     const SYST_RVR: *mut u32 = 0xE000_E014 as *mut u32;
-    const SYST_RVR_RELOAD: u32 = 6_400_000;
+    const SYST_RVR_RELOAD: u32 = 5_500_000;
     unsafe {
         core::ptr::write_volatile(SYST_RVR, SYST_RVR_RELOAD);
     }

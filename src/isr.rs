@@ -3,20 +3,19 @@ use core::arch::asm;
 #[no_mangle]
 extern "C" fn SysTick() {
     unsafe {
-        CNT += 1;
-        if CNT >= 10 {
-            CNT = 0;
-            SECONDS += 1;
+        CENTISEC += 1;
+        if CENTISEC >= 100 {
+            CENTISEC = 0;
+            TOTALSEC += 1;
         }
     }
 }
 
-static mut CNT: u32 = 0;
-static mut SECONDS: u32 = 0;
+static mut CENTISEC: u32 = 0;
+static mut TOTALSEC: u32 = 0;
 
 pub fn sys_seconds() -> u32 {
-    core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
-    unsafe { SECONDS }
+    unsafe { TOTALSEC }
 }
 
 pub struct Atom {

@@ -25,14 +25,16 @@ impl Clone for Pin {
     }
 }
 
+const GPIO_BASE: [u32; 3] = [0x5802_0000, 0x5802_0400, 0x5802_0800];
+
 pub enum Port {
-    _GpioA = 0x5802_0000,
-    GpioB = 0x5802_0400,
-    _GpioC = 0x5802_0800,
+    _GpioA = 0,
+    GpioB = 1,
+    _GpioC = 2,
 }
 
 pub struct Gpio {
-    base_addr: u32,
+    base: u32,
 }
 
 static mut GPIOA_TAKEN: bool = false;
@@ -80,7 +82,7 @@ impl Gpio {
         }
 
         let gpio = Gpio {
-            base_addr: port as u32,
+            base: GPIO_BASE[port as usize],
         };
         core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
         gpio.init(pins);
@@ -90,7 +92,7 @@ impl Gpio {
     }
 
     pub fn set(&self, pins: &[Pin]) {
-        let gpio_bsrr: *mut u32 = (self.base_addr + GPIO_BSRR) as *mut u32;
+        let gpio_bsrr: *mut u32 = (self.base + GPIO_BSRR) as *mut u32;
         let mut set_mask = 0u32;
         for pin in pins {
             set_mask = set_mask | 1u32 << *pin as u8;
@@ -101,7 +103,7 @@ impl Gpio {
     }
 
     pub fn reset(&self, pins: &[Pin]) {
-        let gpio_bsrr: *mut u32 = (self.base_addr + GPIO_BSRR) as *mut u32;
+        let gpio_bsrr: *mut u32 = (self.base + GPIO_BSRR) as *mut u32;
         let mut reset_mask = 0u32;
         for pin in pins {
             reset_mask = reset_mask | 1u32 << (*pin as u8 + 16);
@@ -117,7 +119,7 @@ impl Gpio {
             mode_mask = mode_mask | (1u32 << (*pin as u8) * 2);
         }
 
-        let moder: *mut u32 = self.base_addr as *mut u32;
+        let moder: *mut u32 = self.base as *mut u32;
         unsafe {
             core::ptr::write_volatile(moder, mode_mask);
         }

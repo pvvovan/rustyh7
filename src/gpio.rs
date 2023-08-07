@@ -1,5 +1,3 @@
-use crate::isr;
-
 pub enum Pin {
     Pin0 = 0,
     _Pin1 = 1,
@@ -25,8 +23,10 @@ impl Clone for Pin {
     }
 }
 
-const GPIO_BASE: [u32; 3] = [0x5802_0000, 0x5802_0400, 0x5802_0800];
+const GPIO_SIZE: usize = 3;
+const GPIO_BASE: [u32; GPIO_SIZE] = [0x5802_0000, 0x5802_0400, 0x5802_0800];
 
+#[derive(Clone)]
 pub enum Port {
     _GpioA = 0,
     GpioB = 1,
@@ -37,22 +37,7 @@ pub struct Gpio {
     base: u32,
 }
 
-static mut GPIOA_TAKEN: bool = false;
-static mut GPIOB_TAKEN: bool = false;
-static mut GPIOC_TAKEN: bool = false;
-
-fn mark_taken(gpio_taken: &mut bool) {
-    if *gpio_taken {
-        panic!("GPIO taken");
-    } else {
-        *gpio_taken = true;
-    }
-}
-
-const RCC_AHB4ENR: *mut u32 = (0x5802_4400 + 0x00E0) as *mut u32;
-const RCC_AHB4ENR_GPIOAEN: u32 = 1 << 0;
-const RCC_AHB4ENR_GPIOBEN: u32 = 1 << 1;
-const RCC_AHB4ENR_GPIOCEN: u32 = 1 << 2;
+static mut GPIO_TAKEN: [u8; GPIO_SIZE] = [0; GPIO_SIZE];
 
 unsafe fn set_bits(addr: *mut u32, bits: u32) {
     let mut val = core::ptr::read_volatile(addr);
@@ -63,32 +48,60 @@ unsafe fn set_bits(addr: *mut u32, bits: u32) {
 const GPIO_BSRR: u32 = 0x18;
 
 impl Gpio {
-    pub fn take(port: Port, pins: &[Pin]) -> Self {
-        let mut atomic = isr::lock();
+    pub fn take(port: Port, pins: &[Pin]) -> Option<Self> {
+        let mut taken: u8;
+        unsafe {
+            core::arch::asm!(
+                "LDREXB {flag}, [{addr}]",
+                addr = in(reg) &GPIO_TAKEN[port.clone() as usize],
+                flag = out(reg) taken
+            );
+        }
+        if taken != 0 {
+            unsafe {
+                core::arch::asm!("CLREX");
+            }
+            return None;
+        }
 
+        taken = 1;
+        let err: u32;
+        unsafe {
+            core::arch::asm!(
+                "STREXB {err}, {flag}, [{addr}]",
+                err = out(reg) err,
+                addr = in(reg) &GPIO_TAKEN[port.clone() as usize],
+                flag = in(reg) taken
+            );
+        }
+        if err != 0 {
+            return None;
+        }
+        core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
+
+        const RCC_AHB4ENR: *mut u32 = (0x5802_4400 + 0x00E0) as *mut u32;
+        const RCC_AHB4ENR_GPIOAEN: u32 = 1 << 0;
+        const RCC_AHB4ENR_GPIOBEN: u32 = 1 << 1;
+        const RCC_AHB4ENR_GPIOCEN: u32 = 1 << 2;
         match port {
             Port::_GpioA => unsafe {
-                mark_taken(&mut GPIOA_TAKEN);
                 set_bits(RCC_AHB4ENR, RCC_AHB4ENR_GPIOAEN);
             },
             Port::GpioB => unsafe {
-                mark_taken(&mut GPIOB_TAKEN);
                 set_bits(RCC_AHB4ENR, RCC_AHB4ENR_GPIOBEN);
             },
             Port::_GpioC => unsafe {
-                mark_taken(&mut GPIOC_TAKEN);
                 set_bits(RCC_AHB4ENR, RCC_AHB4ENR_GPIOCEN);
             },
         }
+        core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
 
         let gpio = Gpio {
             base: GPIO_BASE[port as usize],
         };
-        core::sync::atomic::fence(core::sync::atomic::Ordering::SeqCst);
         gpio.init(pins);
 
-        atomic.unlock();
-        return gpio;
+        return Some(gpio);
     }
 
     pub fn set(&self, pins: &[Pin]) {

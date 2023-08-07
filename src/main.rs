@@ -35,7 +35,7 @@ extern "C" fn main() -> ! {
     let z = unsafe { &mut DATA };
     let mut _fl: f32 = 0.0;
 
-    let gpio_b = gpio::Gpio::take(gpio::Port::GpioB, &[gpio::Pin::Pin0, gpio::Pin::Pin14]);
+    let gpio_b = gpio::Gpio::take(gpio::Port::GpioB, &[gpio::Pin::Pin0, gpio::Pin::Pin14]).unwrap();
 
     gpio_b.set(&[gpio::Pin::Pin0]);
     gpio_b.reset(&[gpio::Pin::Pin14]);

@@ -23,8 +23,7 @@ impl Clone for Pin {
     }
 }
 
-const GPIO_SIZE: usize = 3;
-const GPIO_BASE: [u32; GPIO_SIZE] = [0x5802_0000, 0x5802_0400, 0x5802_0800];
+const GPIO_BASE: &[u32] = &[0x5802_0000, 0x5802_0400, 0x5802_0800];
 
 #[derive(Clone)]
 pub enum Port {
@@ -37,7 +36,7 @@ pub struct Gpio {
     base: u32,
 }
 
-static mut GPIO_TAKEN: [u8; GPIO_SIZE] = [0; GPIO_SIZE];
+static mut GPIO_TAKEN: &[u8] = &[0; 16];
 
 unsafe fn set_bits(addr: *mut u32, bits: u32) {
     let mut val = core::ptr::read_volatile(addr);

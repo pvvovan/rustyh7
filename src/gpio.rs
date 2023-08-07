@@ -127,14 +127,14 @@ impl Gpio {
     }
 
     fn init(&self, pins: &[Pin]) {
-        let mut mode_mask = 0u32;
-        for pin in pins {
-            mode_mask = mode_mask | (1u32 << (*pin as u8) * 2);
-        }
-
-        let moder: *mut u32 = self.base as *mut u32;
         unsafe {
-            core::ptr::write_volatile(moder, mode_mask);
+            let moder: *mut u32 = self.base as *mut u32;
+            let mut mode = core::ptr::read_volatile(moder);
+            for pin in pins {
+                mode &= !(3u32 << (*pin as u8 * 2));
+                mode |= 1u32 << (*pin as u8 * 2);
+            }
+            core::ptr::write_volatile(moder, mode);
         }
     }
 }

@@ -21,12 +21,13 @@ pub fn setlatency() {
 }
 
 const SECTOR: u32 = 5;
-const BASESECTOR6: *mut u32 = (0x0800_0000 + 128 * SECTOR) as *mut u32;
-const VALUE_ADDR: *mut u32 = (0x0800_0000 + 128 * SECTOR + 4) as *mut u32;
+const BASESECTOR6: *mut u32 = (0x0800_0000 + 128 * 1024 * SECTOR) as *mut u32;
+const VALUE_ADDR: *mut f32 = (0x0800_0000 + 128 * 1024 * SECTOR + 4) as *mut f32;
 const DEADBEEF: u32 = 0xDEAD_BEEF;
 
 fn init() {
-    if unsafe { core::ptr::read_volatile(BASESECTOR6) } != DEADBEEF {
+    let pattern = unsafe { core::ptr::read_volatile(BASESECTOR6) };
+    if pattern != DEADBEEF {
         unlock();
         erase(SECTOR);
         program(0.0);
@@ -91,13 +92,13 @@ fn program(value: f32) {
         cr |= FLASH_CR_PG | FLASH_CR_FW;
         core::ptr::write_volatile(FLASH_CR, cr);
         core::ptr::write_volatile(BASESECTOR6, DEADBEEF);
-        core::ptr::write_volatile(VALUE_ADDR, value as u32);
+        core::ptr::write_volatile(VALUE_ADDR, value);
         waitqw();
     }
 }
 
 pub fn read() -> f32 {
-    let value = unsafe { core::ptr::read_volatile(VALUE_ADDR) as f32 };
+    let value = unsafe { core::ptr::read_volatile(VALUE_ADDR) };
     return value;
 }
 

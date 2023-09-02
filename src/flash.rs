@@ -20,7 +20,7 @@ pub fn setlatency() {
     init();
 }
 
-const SECTOR: u32 = 1;
+const SECTOR: u32 = 5;
 const BASESECTOR6: *mut u32 = (0x0800_0000 + 128 * SECTOR) as *mut u32;
 const VALUE_ADDR: *mut u32 = (0x0800_0000 + 128 * SECTOR + 4) as *mut u32;
 const DEADBEEF: u32 = 0xDEAD_BEEF;

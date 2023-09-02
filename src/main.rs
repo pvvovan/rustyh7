@@ -31,6 +31,10 @@ extern "C" fn main() -> ! {
     clock_config();
     tim_start();
 
+    let mut val = flash::read();
+    val += 0.1;
+    flash::write(val);
+
     let x = RODATA;
     let y = unsafe { &mut BSS };
     let z = unsafe { &mut DATA };

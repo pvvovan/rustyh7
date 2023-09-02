@@ -32,8 +32,6 @@ extern "C" fn main() -> ! {
     tim_start();
 
     let mut val = flash::read();
-    val += 0.1;
-    flash::write(val);
 
     let x = RODATA;
     let y = unsafe { &mut BSS };
@@ -66,9 +64,14 @@ extern "C" fn main() -> ! {
         gpio_b.set(&[gpio::Pin::Pin0]);
         gpio_b.reset(&[gpio::Pin::Pin14]);
 
+        val += 0.1;
+        flash::write(val);
+
         delay(1);
         gpio_b.reset(&[gpio::Pin::Pin0]);
         gpio_b.set(&[gpio::Pin::Pin14]);
+
+        val = flash::read();
     }
 }
 

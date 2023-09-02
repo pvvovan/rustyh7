@@ -67,8 +67,6 @@ fn erase(sector: u32) {
         cr |= FLASH_CR_SER;
         cr &= !FLASH_CR_SNB;
         cr |= sector << FLASH_CR_SNBPOS;
-        core::ptr::write_volatile(FLASH_CR, cr);
-        cr = core::ptr::read_volatile(FLASH_CR);
         cr |= FLASH_CR_START;
         core::ptr::write_volatile(FLASH_CR, cr);
         waitqw();

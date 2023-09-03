@@ -25,7 +25,7 @@ extern "C" fn HardFault() {
 
 #[no_mangle]
 extern "C" fn main() -> ! {
-    // enable_cache();
+    enable_cache();
     flash::setlatency();
     powercontrol_init();
     clock_config();

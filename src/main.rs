@@ -25,7 +25,7 @@ extern "C" fn HardFault() {
 
 #[no_mangle]
 extern "C" fn main() -> ! {
-    enable_cache();
+    // enable_cache();
     flash::setlatency();
     powercontrol_init();
     clock_config();
@@ -60,14 +60,14 @@ extern "C" fn main() -> ! {
             lock.unlock();
         }
 
-        delay(1);
+        delay(1 + val as u32);
         gpio_b.set(&[gpio::Pin::Pin0]);
         gpio_b.reset(&[gpio::Pin::Pin14]);
 
-        val += 0.1;
+        val += 0.25;
         flash::write(val);
 
-        delay(1);
+        delay(1 + val as u32);
         gpio_b.reset(&[gpio::Pin::Pin0]);
         gpio_b.set(&[gpio::Pin::Pin14]);
 

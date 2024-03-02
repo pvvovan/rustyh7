@@ -566,7 +566,7 @@
           "group_by": false,
           "label": "JLC#",
           "name": "JLC#",
-          "show": false
+          "show": true
         }
       ],
       "filter_string": "",

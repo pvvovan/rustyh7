@@ -11300,6 +11300,7 @@
 	)
 	(label "PG2"
 		(at 101.6 205.74 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11307,6 +11308,17 @@
 			(justify right bottom)
 		)
 		(uuid "02bebb8a-b7cb-4a14-a6d8-45fab17acae0")
+	)
+	(label "PB1"
+		(at 254 187.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "04747351-7c28-4808-8237-c3d2f31ed173")
 	)
 	(label "PD11"
 		(at 266.7 149.86 0)
@@ -11330,8 +11342,61 @@
 		)
 		(uuid "04b2c158-170c-4d76-a1ad-49a5ac6ae570")
 	)
+	(label "PE11"
+		(at 101.6 314.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "04ff09c0-3632-4298-8538-61b843e78fa4")
+	)
+	(label "PG1"
+		(at 101.6 203.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "054e2365-9a04-48cb-a011-f884702cfc99")
+	)
+	(label "PF13"
+		(at 101.6 276.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "078d989f-cc5b-4e23-b521-91864944e71e")
+	)
+	(label "PE14"
+		(at 266.7 208.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "082bdb86-f67d-458e-b905-44276177f2d3")
+	)
+	(label "PB10"
+		(at 254 210.82 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "083b1d2c-8fce-43fe-96e5-d6f6e38df8ff")
+	)
 	(label "PD8"
 		(at 170.18 322.58 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11408,6 +11473,7 @@
 	)
 	(label "PD14"
 		(at 170.18 337.82 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11427,8 +11493,20 @@
 		)
 		(uuid "1995e07d-73ea-4925-ae62-e17bb2572306")
 	)
+	(label "PG1"
+		(at 254 198.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1b40537d-073a-4881-8c66-95416fd47923")
+	)
 	(label "PB11"
 		(at 170.18 243.84 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11470,6 +11548,16 @@
 		)
 		(uuid "1e857d47-8c95-4181-aad4-86ed413ec0d2")
 	)
+	(label "PF11"
+		(at 101.6 271.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1f740712-47d3-45e2-980e-ed993da1286c")
+	)
 	(label "USB_FS_N"
 		(at 170.18 200.66 0)
 		(fields_autoplaced yes)
@@ -11505,6 +11593,7 @@
 	)
 	(label "PA4"
 		(at 170.18 182.88 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11515,6 +11604,7 @@
 	)
 	(label "PG6"
 		(at 101.6 215.9 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11522,6 +11612,27 @@
 			(justify right bottom)
 		)
 		(uuid "2cc49ed6-5da3-483b-a29a-5fe2b639f6a2")
+	)
+	(label "PE15"
+		(at 101.6 325.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "381bd9b6-d928-41b8-84c6-26f0998cc57d")
+	)
+	(label "PC5"
+		(at 254 185.42 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "38dd41d5-1bef-40a1-aae3-814542a13c19")
 	)
 	(label "PA9"
 		(at 170.18 195.58 0)
@@ -11536,6 +11647,7 @@
 	)
 	(label "PB14"
 		(at 170.18 251.46 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11543,6 +11655,28 @@
 			(justify left bottom)
 		)
 		(uuid "3d13c43d-6bf6-4615-ad7e-5483cd6680a7")
+	)
+	(label "PE11"
+		(at 254 203.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3d1e2ef8-3cd1-44f9-8907-ab5ccb9869ae")
+	)
+	(label "PF15"
+		(at 254 195.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3eb25fde-439c-4ead-815e-d8ba83704f38")
 	)
 	(label "T_SWCLK"
 		(at 243.84 93.98 0)
@@ -11557,6 +11691,7 @@
 	)
 	(label "PD11"
 		(at 170.18 330.2 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11576,8 +11711,19 @@
 		)
 		(uuid "42637c9b-58d5-46bc-8f88-4bfebfe52982")
 	)
+	(label "PE7"
+		(at 101.6 304.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "431115c0-a4cf-4406-a075-17732e8d2ffc")
+	)
 	(label "PG5"
 		(at 101.6 213.36 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11596,6 +11742,17 @@
 			(justify right bottom)
 		)
 		(uuid "4561fea2-204f-403f-94cb-d371dd6b8d7c")
+	)
+	(label "PE15"
+		(at 254 208.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "47327bd6-69e2-4418-9f8b-fd80ab503de9")
 	)
 	(label "PC8"
 		(at 170.18 279.4 0)
@@ -11643,6 +11800,7 @@
 	)
 	(label "PD12"
 		(at 170.18 332.74 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11675,6 +11833,7 @@
 	)
 	(label "PG4"
 		(at 101.6 210.82 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11682,6 +11841,16 @@
 			(justify right bottom)
 		)
 		(uuid "548762be-a9ef-476e-868a-3ba3b4f53873")
+	)
+	(label "PC4"
+		(at 170.18 269.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "54dc4883-81c5-4e1e-9e19-5667c30342cf")
 	)
 	(label "PG8"
 		(at 101.6 220.98 180)
@@ -11716,6 +11885,16 @@
 		)
 		(uuid "571067b0-c6ce-45c0-9a85-636e3aad2ed3")
 	)
+	(label "PB0"
+		(at 170.18 215.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "58371c09-a2e2-4507-b037-0d8bddbcbfa4")
+	)
 	(label "USB_FS_N"
 		(at 76.2 40.64 0)
 		(fields_autoplaced yes)
@@ -11726,6 +11905,37 @@
 			(justify left bottom)
 		)
 		(uuid "59ff2787-5f8c-4ee5-a752-92c10dd74b8f")
+	)
+	(label "PE12"
+		(at 101.6 317.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5a11a98b-7810-474f-93cc-17dc02626b3f")
+	)
+	(label "PG0"
+		(at 101.6 200.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5c00083f-d6d6-43e4-94e8-7c917fa751c0")
+	)
+	(label "PE12"
+		(at 266.7 205.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5ca4b04c-81f9-428c-8626-30b5a6b8654c")
 	)
 	(label "PA8"
 		(at 266.7 129.54 0)
@@ -11748,6 +11958,16 @@
 			(justify left bottom)
 		)
 		(uuid "5db8f1fc-6d38-43c3-b02e-5f957cbeb7c2")
+	)
+	(label "PF12"
+		(at 101.6 274.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5fa5d41f-5222-477a-abcd-059ba8b63dad")
 	)
 	(label "PG6"
 		(at 254 137.16 180)
@@ -11773,6 +11993,7 @@
 	)
 	(label "PG7"
 		(at 101.6 218.44 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11783,6 +12004,7 @@
 	)
 	(label "PD10"
 		(at 170.18 327.66 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11793,6 +12015,7 @@
 	)
 	(label "PB15"
 		(at 170.18 254 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11822,6 +12045,37 @@
 			(justify right bottom)
 		)
 		(uuid "76b32ab0-0ffb-4321-b26c-2ca379d00773")
+	)
+	(label "PE9"
+		(at 101.6 309.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "782e9bf3-ec2e-410a-8d27-973cb61cae51")
+	)
+	(label "PB2"
+		(at 170.18 220.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "78ee77f4-17fb-4f68-a73d-3df29029971f")
+	)
+	(label "PE8"
+		(at 254 200.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7a437fa9-c17c-4007-af34-718b2c2d6cde")
 	)
 	(label "T_VCC"
 		(at 219.71 91.44 0)
@@ -11856,6 +12110,17 @@
 		)
 		(uuid "7f3a1657-b60d-457d-a160-be7cea8dd9ce")
 	)
+	(label "PE13"
+		(at 254 205.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7fd453a3-6780-4fd9-86b5-6d89771902b1")
+	)
 	(label "PH1"
 		(at 101.6 195.58 180)
 		(fields_autoplaced yes)
@@ -11866,6 +12131,16 @@
 			(justify right bottom)
 		)
 		(uuid "7febe7e7-4412-4b22-8e5c-7fd9cd7d91d3")
+	)
+	(label "PF14"
+		(at 101.6 279.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "807b13b2-76c7-42b2-a68b-1811828fcbfe")
 	)
 	(label "T_JTDI"
 		(at 243.84 99.06 0)
@@ -11900,8 +12175,20 @@
 		)
 		(uuid "871de54e-1098-4aa9-be72-4c6a46ca4266")
 	)
+	(label "PE9"
+		(at 266.7 200.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8a060c93-3925-42c6-a366-dca14a38f80e")
+	)
 	(label "PG3"
 		(at 101.6 208.28 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11932,6 +12219,26 @@
 		)
 		(uuid "90a94d2b-5155-44d1-8027-a15f32c444f6")
 	)
+	(label "PE8"
+		(at 101.6 307.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "93c89c16-2420-4e1c-a6af-51e52f868625")
+	)
+	(label "PE10"
+		(at 101.6 312.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "93eb4665-a198-42a3-80ce-c4f9ddaa4ea3")
+	)
 	(label "PD10"
 		(at 254 149.86 180)
 		(fields_autoplaced yes)
@@ -11954,8 +12261,20 @@
 		)
 		(uuid "977592a6-b989-45a2-ae1a-b74003173abf")
 	)
+	(label "PG0"
+		(at 266.7 195.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "992e40eb-c848-4fac-80fd-beb2d0d3babd")
+	)
 	(label "PB13"
 		(at 170.18 248.92 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11966,6 +12285,7 @@
 	)
 	(label "PB12"
 		(at 170.18 246.38 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11996,8 +12316,41 @@
 		)
 		(uuid "a33cdc6c-09e9-47ac-adf0-df2a361f3273")
 	)
+	(label "PF13"
+		(at 254 193.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a50626c7-5202-4710-bca9-cc5af39f366e")
+	)
+	(label "PA7"
+		(at 170.18 190.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a5560d19-ae0f-4b9c-9bcb-863e2254b486")
+	)
+	(label "PE10"
+		(at 266.7 203.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a8130c09-0a26-4cad-8540-41c1dd9a18b9")
+	)
 	(label "PD15"
 		(at 170.18 340.36 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12039,6 +12392,27 @@
 		)
 		(uuid "aef4a0e2-554c-4d14-911e-8560c36bda64")
 	)
+	(label "PF15"
+		(at 101.6 281.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b501498c-3086-4b4a-98ca-f1c52867cead")
+	)
+	(label "PA5"
+		(at 254 180.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b57f1561-254f-4b41-8ec5-6a57169047f4")
+	)
 	(label "VDDA"
 		(at 170.18 143.51 180)
 		(fields_autoplaced yes)
@@ -12049,6 +12423,27 @@
 			(justify right bottom)
 		)
 		(uuid "b5edf7f7-51a3-48aa-8cd7-fd0613d73f8c")
+	)
+	(label "PA6"
+		(at 266.7 180.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ba1e5d18-1830-44bf-b5af-74cccd1a203e")
+	)
+	(label "PA6"
+		(at 170.18 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ba2a178e-abbd-4244-81be-05f50bf39ce3")
 	)
 	(label "PB11"
 		(at 266.7 210.82 0)
@@ -12072,8 +12467,20 @@
 		)
 		(uuid "c04a58ea-c8e3-45dc-b9df-6e6e4c9415ec")
 	)
+	(label "PF14"
+		(at 266.7 193.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c07898ab-2092-45c4-aede-4eb3a11fae90")
+	)
 	(label "PA3"
 		(at 170.18 180.34 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12081,6 +12488,17 @@
 			(justify left bottom)
 		)
 		(uuid "c475c97b-b84a-4b9c-973e-6ba83833473e")
+	)
+	(label "PB2"
+		(at 266.7 187.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c5497e78-758d-4c4d-a1eb-f599086002c7")
 	)
 	(label "T_VCP_RX"
 		(at 219.71 104.14 0)
@@ -12092,6 +12510,27 @@
 			(justify left bottom)
 		)
 		(uuid "c65a5b24-27b5-456b-94cc-99f686f48c8d")
+	)
+	(label "PE13"
+		(at 101.6 320.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c7ced44c-7e2b-40d4-b003-ba29a1a5d0c8")
+	)
+	(label "PF12"
+		(at 266.7 190.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c9080a96-243c-4d04-b7dc-1f6ff01b2464")
 	)
 	(label "T_SWDIO"
 		(at 243.84 91.44 0)
@@ -12126,6 +12565,17 @@
 		)
 		(uuid "d22eec03-6cf3-4c71-bf11-2ba7b0a34317")
 	)
+	(label "PC4"
+		(at 266.7 182.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d23d7338-2aed-4a7a-a4d7-b32b900b5297")
+	)
 	(label "PH0"
 		(at 101.6 193.04 180)
 		(fields_autoplaced yes)
@@ -12148,6 +12598,16 @@
 		)
 		(uuid "d3d241bf-0206-4c28-8d9d-d5e0337458dc")
 	)
+	(label "PB10"
+		(at 170.18 241.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d4e9253c-2f38-48ed-8f43-c120506530c4")
+	)
 	(label "PC9"
 		(at 254 129.54 180)
 		(fields_autoplaced yes)
@@ -12159,8 +12619,19 @@
 		)
 		(uuid "d63b8ade-40f1-40c9-8516-fa00eae4405d")
 	)
+	(label "PE14"
+		(at 101.6 322.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d7519240-e2f3-47ae-a639-31ce3f383d5f")
+	)
 	(label "PD13"
 		(at 170.18 335.28 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12169,8 +12640,19 @@
 		)
 		(uuid "de20a776-fd4b-4ea8-a28d-d68dcfcd8366")
 	)
+	(label "PA5"
+		(at 170.18 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dedb6f3d-98dc-46b7-bc97-abb69fbb3aa1")
+	)
 	(label "PD9"
 		(at 170.18 325.12 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12178,6 +12660,17 @@
 			(justify left bottom)
 		)
 		(uuid "defc43dd-e8da-43fb-b066-3a95771bc919")
+	)
+	(label "PB0"
+		(at 266.7 185.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "df9739bb-abb0-41fc-8fa8-d1bca89b2cdd")
 	)
 	(label "PDR_ON"
 		(at 101.6 187.96 180)
@@ -12189,6 +12682,16 @@
 			(justify right bottom)
 		)
 		(uuid "e031f7cc-7208-48d6-ab97-f9ee37dd1d4b")
+	)
+	(label "PC5"
+		(at 170.18 271.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e32a7d44-23c4-4061-9616-ddadd4fd88ca")
 	)
 	(label "PC9"
 		(at 170.18 281.94 0)
@@ -12289,6 +12792,27 @@
 		)
 		(uuid "f5737433-edad-4554-8b6e-775fe646b56a")
 	)
+	(label "PF11"
+		(at 254 190.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f6215046-c193-427f-9dad-5930cbe19446")
+	)
+	(label "PB1"
+		(at 170.18 218.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f7fd9202-206d-4b60-87a6-50620b1f58e8")
+	)
 	(label "VBAT"
 		(at 114.3 139.7 180)
 		(fields_autoplaced yes)
@@ -12311,6 +12835,17 @@
 		)
 		(uuid "f877ab4a-d6c1-4cb8-b4ec-57703797b1eb")
 	)
+	(label "PA7"
+		(at 254 182.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fa1a005b-bc87-4840-8408-f01c8881c7c1")
+	)
 	(label "USB_FS_P"
 		(at 170.18 203.2 0)
 		(fields_autoplaced yes)
@@ -12321,6 +12856,17 @@
 			(justify left bottom)
 		)
 		(uuid "fa4f6a3d-98b7-48ed-95eb-08ffa5bb1256")
+	)
+	(label "PE7"
+		(at 266.7 198.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fb2d84e7-a8af-4cbf-89e5-c49cb9370b4c")
 	)
 	(label "PB15"
 		(at 266.7 154.94 0)

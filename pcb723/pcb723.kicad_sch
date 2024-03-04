@@ -16579,7 +16579,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 228.6 292.1 0)
 			(effects
 				(font
@@ -16606,7 +16606,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C25123"
+		(property "JLC#" "C17734"
 			(at 228.6 292.1 0)
 			(effects
 				(font
@@ -20551,7 +20551,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 228.6 241.3 0)
 			(effects
 				(font
@@ -20578,7 +20578,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C25123"
+		(property "JLC#" "C17734"
 			(at 228.6 241.3 0)
 			(effects
 				(font
@@ -21650,7 +21650,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 228.6 190.5 0)
 			(effects
 				(font
@@ -21677,7 +21677,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C25123"
+		(property "JLC#" "C17734"
 			(at 228.6 190.5 0)
 			(effects
 				(font
@@ -22808,7 +22808,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 228.6 139.7 0)
 			(effects
 				(font
@@ -22835,7 +22835,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C25123"
+		(property "JLC#" "C17734"
 			(at 228.6 139.7 0)
 			(effects
 				(font
@@ -24173,7 +24173,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 241.3 44.45 0)
 			(effects
 				(font
@@ -24200,7 +24200,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C25123"
+		(property "JLC#" "C17734"
 			(at 241.3 44.45 0)
 			(effects
 				(font

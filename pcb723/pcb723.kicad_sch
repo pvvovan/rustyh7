@@ -21215,7 +21215,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/samtec-inc/FTSH-107-01-L-DV-K/6678186"
 			(at 233.68 96.52 0)
 			(effects
 				(font

@@ -3197,7 +3197,7 @@
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "43a0f00c-bdd9-474a-88d3-5b97293fb26a")
-		(at 137 50.23)
+		(at 137 49.44)
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R5"
@@ -14128,7 +14128,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/samtec-inc/FTSH-107-01-L-DV-K/6678186"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14875,6 +14875,7 @@
 			(uuid "81461c58-a9c0-4747-8619-8206407daeea")
 		)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_PinHeader_1.27mm.3dshapes/PinHeader_2x07_P1.27mm_Vertical_SMD.wrl"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -14883,6 +14884,17 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/FTSH-107-01-L-DV-K.step"
+			(offset
+				(xyz 0 0 0.4)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 0 90)
 			)
 		)
 	)
@@ -15339,7 +15351,7 @@
 	(footprint "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm"
 		(layer "F.Cu")
 		(uuid "be8168f4-fce9-4eee-828c-107375889b30")
-		(at 130.475 47.94)
+		(at 130.475 47.15)
 		(descr "tactile push button, 6x6mm e.g. PTS645xx series, height=9.5mm")
 		(tags "tact sw push 6mm smd")
 		(property "Reference" "SW1"
@@ -15877,7 +15889,7 @@
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "c696627a-4a48-4f71-bc1b-f1947fe597b5")
-		(at 124.05 46.2 -90)
+		(at 124.05 45.41 -90)
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R6"
@@ -19250,7 +19262,7 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "f688c4d3-4df4-437c-9742-1e075c0a20be")
-		(at 123.85 50.29)
+		(at 123.85 49.5)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C21"
@@ -20598,6 +20610,19 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "PF9"
+		(at 131.3 50.5 270)
+		(layer "F.SilkS")
+		(uuid "5edc436e-0d9a-4f71-90cd-230b2e9fcb47")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.18)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "BOOT0"
 		(at 112.13 44.319998 0)
 		(layer "F.SilkS")
@@ -20675,8 +20700,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Reset"
-		(at 127.837858 44.23 0)
+	(gr_text "RESET"
+		(at 127.837858 43.8 0)
 		(layer "F.SilkS")
 		(uuid "fbc06314-41a3-41d3-8cbd-036b2afa4769")
 		(effects

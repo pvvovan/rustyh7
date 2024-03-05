@@ -13610,13 +13610,13 @@
 		(uuid "4d36b837-b71c-49cd-9703-4a10f4e4298b")
 	)
 	(label "PF4"
-		(at 254 243.84 180)
+		(at 266.7 243.84 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "4daf3bfc-af4a-48b7-be57-668bc9c5b1c6")
 	)
@@ -14831,13 +14831,13 @@
 		(uuid "bc569dd1-c3b9-4efa-baba-a33e4bee736a")
 	)
 	(label "PF5"
-		(at 266.7 243.84 0)
+		(at 254 243.84 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "bc6994d8-8dc5-4e58-bb49-ea4b26d3cf42")
 	)

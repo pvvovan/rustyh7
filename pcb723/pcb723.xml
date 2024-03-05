@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/lisa/Documents/rustyh7/pcb723/pcb723.kicad_sch</source>
-    <date>2024-03-05T11:53:45+0100</date>
+    <date>2024-03-05T14:42:22+0100</date>
     <tool>Eeschema 8.0.0</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -986,11 +986,11 @@
     </comp>
     <comp ref="R7">
       <value>33R</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <description>Resistor, small symbol</description>
       <fields>
         <field name="JLC#">C25105</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description">Resistor, small symbol</field>
       </fields>
@@ -1005,11 +1005,11 @@
     </comp>
     <comp ref="R8">
       <value>100R</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <description>Resistor, small symbol</description>
       <fields>
         <field name="JLC#">C25076</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description">Resistor, small symbol</field>
       </fields>
@@ -1024,11 +1024,11 @@
     </comp>
     <comp ref="R9">
       <value>100R</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <description>Resistor, small symbol</description>
       <fields>
         <field name="JLC#">C25076</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description">Resistor, small symbol</field>
       </fields>
@@ -1043,11 +1043,11 @@
     </comp>
     <comp ref="R10">
       <value>100R</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <description>Resistor, small symbol</description>
       <fields>
         <field name="JLC#">C25076</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description">Resistor, small symbol</field>
       </fields>
@@ -1138,11 +1138,11 @@
     </comp>
     <comp ref="R15">
       <value>100R</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <description>Resistor, small symbol</description>
       <fields>
         <field name="JLC#">C25076</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description">Resistor, small symbol</field>
       </fields>
@@ -1157,11 +1157,11 @@
     </comp>
     <comp ref="R16">
       <value>100R</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <description>Resistor, small symbol</description>
       <fields>
         <field name="JLC#">C25076</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description">Resistor, small symbol</field>
       </fields>

@@ -22,6 +22,7 @@ for el in root[1]:
         component.PartN = el[3][0].text
         component.Designator = el.attrib['ref']
         component.Footprint = el[1].text
+        all_components.append(component)
 
 # remove components which do not have JLCPCB part number
 jlc_components = []

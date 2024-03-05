@@ -16,10 +16,11 @@ root = tree.getroot()
 all_components = []
 
 for el in root[1]:
-    if len(el[3]) > 0 and el[3][0].attrib['name'] == 'JLC#':
+    fields = el.findall('fields')
+    if len(fields[0]) > 0 and fields[0][0].attrib['name'] == 'JLC#':
         component = Component()
         component.Comment = el[0].text
-        component.PartN = el[3][0].text
+        component.PartN = fields[0][0].text
         component.Designator = el.attrib['ref']
         component.Footprint = el[1].text
         all_components.append(component)

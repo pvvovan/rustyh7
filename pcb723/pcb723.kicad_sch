@@ -18488,7 +18488,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_HC49-SD"
+		(property "Footprint" "Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm"
 			(at 50.8 226.06 0)
 			(effects
 				(font
@@ -18515,7 +18515,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C12674"
+		(property "JLC#" "C115962"
 			(at 50.8 226.06 0)
 			(effects
 				(font

@@ -16,19 +16,12 @@ root = tree.getroot()
 all_components = []
 
 for el in root[1]:
-    component = Component()
-    fields = el.findall('fields')
-    if len(fields) == 1 and fields[0][0].attrib['name'] ==  'JLC#':
-        component.PartN = fields[0][0].text
-    elif len(fields) == 0:
-        component.PartN = ''
-    else:
-        print('JLCPCB part number not found')
-        quit(1)
-    component.Comment = el[0].text
-    component.Designator = el.attrib['ref']
-    component.Footprint = el[1].text
-    all_components.append(component)
+    if len(el[3]) > 0 and el[3][0].attrib['name'] == 'JLC#':
+        component = Component()
+        component.Comment = el[0].text
+        component.PartN = el[3][0].text
+        component.Designator = el.attrib['ref']
+        component.Footprint = el[1].text
 
 # remove components which do not have JLCPCB part number
 jlc_components = []
@@ -51,7 +44,7 @@ for ref_el in jlc_components:
 
 
 # generate position file
-dir_asm = os.path.dirname(sys.argv[1]) + '/assemble'
+dir_asm = os.path.dirname(sys.argv[1]) + '/assembly'
 files_asm = os.listdir(dir_asm)
 
 if len(files_asm) != 1:

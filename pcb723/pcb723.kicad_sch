@@ -18219,15 +18219,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" ""
-			(at 50.8 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "dd68be43-5276-48fa-a5b8-601b08148f96")
 		)

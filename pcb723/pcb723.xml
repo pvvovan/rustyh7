@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/lisa/Documents/rustyh7/pcb723/pcb723.kicad_sch</source>
-    <date>2024-03-05T14:42:22+0100</date>
+    <date>2024-03-05T15:19:33+0100</date>
     <tool>Eeschema 8.0.0</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1255,13 +1255,11 @@
       <footprint>Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm</footprint>
       <description>Push button switch, generic, two pins</description>
       <fields>
-        <field name="JLC#">C2909692</field>
         <field name="Footprint">Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm</field>
         <field name="Datasheet"/>
         <field name="Description">Push button switch, generic, two pins</field>
       </fields>
       <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
-      <property name="JLC#" value="C2909692"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
       <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>

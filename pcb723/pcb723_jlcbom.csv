@@ -17,5 +17,4 @@ Emerald,"D5",LED_SMD:LED_0805_2012Metric,C2297
 510R,"R14, R17, R18, R19, R20",Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17734
 100R,"R2, R3, R6, R8, R9, R10, R15, R16",Resistor_SMD:R_0402_1005Metric,C25076
 33R,"R7",Resistor_SMD:R_0402_1005Metric,C25105
-SW_Push,"SW1",Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm,C2909692
 8MHz 20pF,"Y1",Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm,C115962

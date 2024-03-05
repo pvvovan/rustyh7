@@ -30,5 +30,5 @@ fp-info-cache
 
 # JLCBCP files
 !pcb723-all-pos.csv
-!BOM.csv
-!POS.csv
+!pcb723_jlcbom.csv
+!pcb723_jlcpos.csv

@@ -10406,7 +10406,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 243.84) (xy 228.6 245.11)
+			(xy 228.6 246.38) (xy 228.6 247.65)
 		)
 		(stroke
 			(width 0)
@@ -10426,7 +10426,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 193.04) (xy 228.6 194.31)
+			(xy 228.6 195.58) (xy 228.6 196.85)
 		)
 		(stroke
 			(width 0)
@@ -10636,7 +10636,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 294.64) (xy 228.6 295.91)
+			(xy 228.6 297.18) (xy 228.6 298.45)
 		)
 		(stroke
 			(width 0)
@@ -10816,7 +10816,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 142.24) (xy 228.6 143.51)
+			(xy 228.6 144.78) (xy 228.6 146.05)
 		)
 		(stroke
 			(width 0)
@@ -16728,84 +16728,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small")
-		(at 228.6 292.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "20347427-2fc6-4acd-b15b-8f9166d138e3")
-		(property "Reference" "R20"
-			(at 229.87 290.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "510R"
-			(at 229.87 293.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 228.6 292.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 292.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 228.6 292.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC#" "C17734"
-			(at 228.6 292.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ba26d786-a383-4689-ac75-71e2e8ecee18")
-		)
-		(pin "1"
-			(uuid "438e3c5d-1910-4331-bb85-bc4a252251f3")
-		)
-		(instances
-			(project "pcb723"
-				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
-					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 50.8 200.66 0)
 		(unit 1)
@@ -17160,7 +17082,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 194.31 0)
+		(at 228.6 196.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17168,7 +17090,7 @@
 		(dnp no)
 		(uuid "31d31c10-f870-404a-9680-6a8afb606f7c")
 		(property "Reference" "#PWR029"
-			(at 228.6 200.66 0)
+			(at 228.6 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17177,7 +17099,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 228.6 198.12 0)
+			(at 228.6 200.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17186,7 +17108,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 194.31 0)
+			(at 228.6 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17195,7 +17117,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 194.31 0)
+			(at 228.6 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17204,7 +17126,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 228.6 194.31 0)
+			(at 228.6 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19828,6 +19750,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 228.6 191.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "64f15bb6-0ca2-4bd4-8a3b-3c3fabfa3486")
+		(property "Reference" "R17"
+			(at 231.14 190.4999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "510R"
+			(at 231.14 193.0399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 226.822 191.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 228.6 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 228.6 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC#" "C17734"
+			(at 228.6 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "43099b30-2b57-43f4-a14c-00fe84d7e6ee")
+		)
+		(pin "2"
+			(uuid "82b703c8-d3a4-4972-84a9-4b5ec6527c7f")
+		)
+		(instances
+			(project "pcb723"
+				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 50.8 177.8 0)
 		(unit 1)
@@ -20770,84 +20771,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small")
-		(at 228.6 241.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7b32ba79-a7e3-4a4a-a89b-d47d8eb9bf91")
-		(property "Reference" "R18"
-			(at 229.87 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "510R"
-			(at 229.87 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 228.6 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 228.6 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC#" "C17734"
-			(at 228.6 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "40583fd8-ad80-446f-aa17-7e939558bc90")
-		)
-		(pin "1"
-			(uuid "afe37b48-4f11-4b99-ae73-5c6fc6f18cc5")
-		)
-		(instances
-			(project "pcb723"
-				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
-					(reference "R18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 152.4 154.94 0)
 		(unit 1)
@@ -21205,7 +21128,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 245.11 0)
+		(at 228.6 247.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21213,7 +21136,7 @@
 		(dnp no)
 		(uuid "8a78edc7-9b86-434d-98b3-6a5e03909f15")
 		(property "Reference" "#PWR030"
-			(at 228.6 251.46 0)
+			(at 228.6 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21222,7 +21145,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 228.6 248.92 0)
+			(at 228.6 251.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21231,7 +21154,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 245.11 0)
+			(at 228.6 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21240,7 +21163,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 245.11 0)
+			(at 228.6 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21249,7 +21172,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 228.6 245.11 0)
+			(at 228.6 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21531,7 +21454,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 143.51 0)
+		(at 228.6 146.05 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21539,7 +21462,7 @@
 		(dnp no)
 		(uuid "8e18266d-1dcb-4826-b0e0-9a05bc94cc85")
 		(property "Reference" "#PWR031"
-			(at 228.6 149.86 0)
+			(at 228.6 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21548,7 +21471,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 228.6 147.32 0)
+			(at 228.6 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21557,7 +21480,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 143.51 0)
+			(at 228.6 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21566,7 +21489,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 143.51 0)
+			(at 228.6 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21575,7 +21498,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 228.6 143.51 0)
+			(at 228.6 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21863,84 +21786,6 @@
 			(project "pcb723"
 				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
 					(reference "#PWR040")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 228.6 190.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "96c966e3-235a-4105-a880-9a61c194fac0")
-		(property "Reference" "R17"
-			(at 229.87 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "510R"
-			(at 229.87 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 228.6 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 228.6 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC#" "C17734"
-			(at 228.6 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8f8203e0-2448-4e0b-ad40-9c1386bae57c")
-		)
-		(pin "1"
-			(uuid "8abd2374-f73a-4e68-b6f9-bf3eb85e9f71")
-		)
-		(instances
-			(project "pcb723"
-				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
-					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -22428,6 +22273,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 228.6 293.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bb573f32-ab56-42fd-b179-28e563a68e8b")
+		(property "Reference" "R20"
+			(at 231.14 292.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "510R"
+			(at 231.14 294.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 226.822 293.37 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 228.6 293.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 228.6 293.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC#" "C17734"
+			(at 228.6 293.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6dcdb569-4d60-44dc-800b-0d8229aff9cd")
+		)
+		(pin "2"
+			(uuid "e6a5f9d4-0382-480f-b9bd-bdc16b0060e5")
+		)
+		(instances
+			(project "pcb723"
+				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 241.3 53.34 0)
 		(unit 1)
@@ -22717,7 +22641,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 295.91 0)
+		(at 228.6 298.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22725,7 +22649,7 @@
 		(dnp no)
 		(uuid "c560df37-8765-40b1-be10-28ca4ebffad6")
 		(property "Reference" "#PWR032"
-			(at 228.6 302.26 0)
+			(at 228.6 304.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22734,7 +22658,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 228.6 299.72 0)
+			(at 228.6 302.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22743,7 +22667,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 295.91 0)
+			(at 228.6 298.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22752,7 +22676,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 295.91 0)
+			(at 228.6 298.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22761,7 +22685,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 228.6 295.91 0)
+			(at 228.6 298.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23027,84 +22951,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small")
-		(at 228.6 139.7 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ce8daee7-75fc-4405-acc8-5383adc022cb")
-		(property "Reference" "R19"
-			(at 229.87 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "510R"
-			(at 229.87 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 228.6 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 228.6 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC#" "C17734"
-			(at 228.6 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3acfefb6-a1c6-4b79-8827-d6e6f919faac")
-		)
-		(pin "1"
-			(uuid "035f2121-e8f2-4d5c-994a-68c08fcffc15")
-		)
-		(instances
-			(project "pcb723"
-				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
-					(reference "R19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 215.9 88.9 0)
 		(unit 1)
@@ -23229,6 +23075,164 @@
 			(project "pcb723"
 				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 228.6 242.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d22e7058-266b-481e-ab44-7c3e59ebf280")
+		(property "Reference" "R18"
+			(at 231.14 241.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "510R"
+			(at 231.14 243.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 226.822 242.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 228.6 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 228.6 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC#" "C17734"
+			(at 228.6 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5ddf4b6f-1b17-4e64-9962-785b19531060")
+		)
+		(pin "2"
+			(uuid "d34fce2f-782f-42f1-865f-8d09beda9660")
+		)
+		(instances
+			(project "pcb723"
+				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 228.6 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d82cc2fe-c809-41e2-9f0c-34f1eee26b18")
+		(property "Reference" "R19"
+			(at 231.14 139.6999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "510R"
+			(at 231.14 142.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 226.822 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 228.6 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 228.6 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC#" "C17734"
+			(at 228.6 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "17befd7f-6a68-4ed8-9929-460d75814e77")
+		)
+		(pin "2"
+			(uuid "51109581-1773-41dc-92ff-a4bb197e50aa")
+		)
+		(instances
+			(project "pcb723"
+				(path "/c6d17ad3-0e5c-4c45-9d0f-480a6a203f35"
+					(reference "R19")
 					(unit 1)
 				)
 			)

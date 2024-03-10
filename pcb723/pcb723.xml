@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/lisa/Documents/rustyh7/pcb723/pcb723.kicad_sch</source>
-    <date>2024-03-05T15:45:46+0100</date>
+    <date>2024-03-10T10:51:23+0100</date>
     <tool>Eeschema 8.0.0</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -350,21 +350,21 @@
     <comp ref="C18">
       <value>4u7</value>
       <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
-      <description>Unpolarized capacitor, small symbol</description>
+      <description>Unpolarized capacitor</description>
       <fields>
         <field name="JLC#">C29823</field>
         <field name="Footprint">Capacitor_SMD:C_1206_3216Metric</field>
         <field name="Datasheet"/>
-        <field name="Description">Unpolarized capacitor, small symbol</field>
+        <field name="Description">Unpolarized capacitor</field>
       </fields>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="JLC#" value="C29823"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <property name="ki_fp_filters" value="C_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>da4a3b82-2a49-4cd7-b6a2-654db419c0dc</tstamps>
+      <tstamps>660e5ec0-a66c-41f3-93d1-98c93ec4ed1f</tstamps>
     </comp>
     <comp ref="C19">
       <value>2u2</value>
@@ -497,7 +497,7 @@
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e401413d-c83e-4f78-92af-7f608040effa</tstamps>
+      <tstamps>3b6c7415-25b7-473e-b43b-1dbaa55ef9bb</tstamps>
     </comp>
     <comp ref="C26">
       <value>100n</value>
@@ -1120,21 +1120,21 @@
     <comp ref="R14">
       <value>510R</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <description>Resistor, small symbol</description>
+      <description>Resistor</description>
       <fields>
         <field name="JLC#">C17734</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</field>
         <field name="Datasheet"/>
-        <field name="Description">Resistor, small symbol</field>
+        <field name="Description">Resistor</field>
       </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="JLC#" value="C17734"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f9ce6a5b-0741-4302-992e-f59569bca745</tstamps>
+      <tstamps>2629760c-16d9-4178-8c95-f5007d9146ee</tstamps>
     </comp>
     <comp ref="R15">
       <value>100R</value>
@@ -1177,78 +1177,78 @@
     <comp ref="R17">
       <value>510R</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <description>Resistor, small symbol</description>
+      <description>Resistor</description>
       <fields>
         <field name="JLC#">C17734</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</field>
         <field name="Datasheet"/>
-        <field name="Description">Resistor, small symbol</field>
+        <field name="Description">Resistor</field>
       </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="JLC#" value="C17734"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>96c966e3-235a-4105-a880-9a61c194fac0</tstamps>
+      <tstamps>64f15bb6-0ca2-4bd4-8a3b-3c3fabfa3486</tstamps>
     </comp>
     <comp ref="R18">
       <value>510R</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <description>Resistor, small symbol</description>
+      <description>Resistor</description>
       <fields>
         <field name="JLC#">C17734</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</field>
         <field name="Datasheet"/>
-        <field name="Description">Resistor, small symbol</field>
+        <field name="Description">Resistor</field>
       </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="JLC#" value="C17734"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7b32ba79-a7e3-4a4a-a89b-d47d8eb9bf91</tstamps>
+      <tstamps>d22e7058-266b-481e-ab44-7c3e59ebf280</tstamps>
     </comp>
     <comp ref="R19">
       <value>510R</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <description>Resistor, small symbol</description>
+      <description>Resistor</description>
       <fields>
         <field name="JLC#">C17734</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</field>
         <field name="Datasheet"/>
-        <field name="Description">Resistor, small symbol</field>
+        <field name="Description">Resistor</field>
       </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="JLC#" value="C17734"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ce8daee7-75fc-4405-acc8-5383adc022cb</tstamps>
+      <tstamps>d82cc2fe-c809-41e2-9f0c-34f1eee26b18</tstamps>
     </comp>
     <comp ref="R20">
       <value>510R</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <description>Resistor, small symbol</description>
+      <description>Resistor</description>
       <fields>
         <field name="JLC#">C17734</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</field>
         <field name="Datasheet"/>
-        <field name="Description">Resistor, small symbol</field>
+        <field name="Description">Resistor</field>
       </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="JLC#" value="C17734"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>20347427-2fc6-4acd-b15b-8f9166d138e3</tstamps>
+      <tstamps>bb573f32-ab56-42fd-b179-28e563a68e8b</tstamps>
     </comp>
     <comp ref="SW1">
       <value>SW_Push</value>
@@ -1610,6 +1610,24 @@
         <pin num="28" name="Pin_28" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Device" part="C_Small">
       <description>Unpolarized capacitor, small symbol</description>
       <docs>~</docs>
@@ -1664,6 +1682,24 @@
       <pins>
         <pin num="1" name="K" type="passive"/>
         <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Device" part="R_Small">
@@ -1930,7 +1966,7 @@
       <node ref="C15" pin="2" pintype="passive"/>
       <node ref="C16" pin="2" pintype="passive"/>
       <node ref="C17" pin="2" pintype="passive"/>
-      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C18" pin="1" pintype="passive"/>
       <node ref="C2" pin="2" pintype="passive"/>
       <node ref="C24" pin="1" pintype="passive"/>
       <node ref="C3" pin="2" pintype="passive"/>
@@ -2475,7 +2511,7 @@
       <node ref="C15" pin="1" pintype="passive"/>
       <node ref="C16" pin="1" pintype="passive"/>
       <node ref="C17" pin="1" pintype="passive"/>
-      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
       <node ref="C19" pin="1" pintype="passive"/>
       <node ref="C2" pin="1" pintype="passive"/>
       <node ref="C20" pin="1" pintype="passive"/>

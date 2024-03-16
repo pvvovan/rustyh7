@@ -17403,7 +17403,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C730146"
+		(property "JLC#" ""
 			(at 134.62 259.08 0)
 			(effects
 				(font
@@ -20530,7 +20530,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" "C2293"
+		(property "JLC#" ""
 			(at 228.6 182.88 0)
 			(effects
 				(font

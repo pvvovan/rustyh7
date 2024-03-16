@@ -17403,15 +17403,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLC#" ""
-			(at 134.62 259.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "139"
 			(uuid "9d816d13-7549-431a-b1d6-24cb23b40f46")
 		)
@@ -20522,15 +20513,6 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 228.6 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC#" ""
 			(at 228.6 182.88 0)
 			(effects
 				(font

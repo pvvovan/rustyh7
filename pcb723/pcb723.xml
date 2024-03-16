@@ -2,8 +2,8 @@
 <export version="E">
   <design>
     <source>/home/lisa/Documents/rustyh7/pcb723/pcb723.kicad_sch</source>
-    <date>2024-03-10T10:51:23+0100</date>
-    <tool>Eeschema 8.0.0</tool>
+    <date>2024-03-16T09:30:21+0100</date>
+    <tool>Eeschema 8.0.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -542,13 +542,11 @@
       <footprint>LED_SMD:LED_0805_2012Metric</footprint>
       <description>Light emitting diode</description>
       <fields>
-        <field name="JLC#">C2293</field>
         <field name="Footprint">LED_SMD:LED_0805_2012Metric</field>
         <field name="Datasheet"/>
         <field name="Description">Light emitting diode</field>
       </fields>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <property name="JLC#" value="C2293"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
       <property name="ki_keywords" value="LED diode"/>
@@ -1289,13 +1287,11 @@
       <datasheet>https://www.st.com/resource/en/datasheet/stm32h723zg.pdf</datasheet>
       <description>STMicroelectronics Arm Cortex-M7 MCU, 1024KB flash, 564KB RAM, 550 MHz, 1.62-3.6V, 114 GPIO, LQFP144</description>
       <fields>
-        <field name="JLC#">C730146</field>
         <field name="Footprint">Package_QFP:LQFP-144_20x20mm_P0.5mm</field>
         <field name="Datasheet">https://www.st.com/resource/en/datasheet/stm32h723zg.pdf</field>
         <field name="Description">STMicroelectronics Arm Cortex-M7 MCU, 1024KB flash, 564KB RAM, 550 MHz, 1.62-3.6V, 114 GPIO, LQFP144</field>
       </fields>
       <libsource lib="MCU_ST_STM32H7" part="STM32H723ZGTx" description="STMicroelectronics Arm Cortex-M7 MCU, 1024KB flash, 564KB RAM, 550 MHz, 1.62-3.6V, 114 GPIO, LQFP144"/>
-      <property name="JLC#" value="C730146"/>
       <property name="Sheetname" value="Root"/>
       <property name="Sheetfile" value="pcb723.kicad_sch"/>
       <property name="ki_keywords" value="Arm Cortex-M7 STM32H7 STM32H723/733"/>
